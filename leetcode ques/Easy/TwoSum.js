@@ -33,14 +33,27 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
-var twoSum = function(nums, target) {
-    for(let i=0 ; i<=nums.length ; i++){
-        for(let j=1+i ; j<=nums.length-1 ; j++){
-            if(nums[i]+nums[j] === target){
-                return [i,j];
-            }
+var twoSum = function (nums, target) {
+    // for(let i=0 ; i<=nums.length ; i++){
+    //     for(let j=1+i ; j<=nums.length-1 ; j++){
+    //         if(nums[i]+nums[j] === target){
+    //             return [i,j];
+    //         }
+    //     }
+    // }
+
+    //==========or========
+    let map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        let x = target - nums[i];
+
+        if (map.has(x)) {
+            return [map.get(x), i]
         }
+
+        map.set(nums[i], i);
     }
+    return [-1, -1];
 };
 
 // let arr = [1,2,3,4,5];
