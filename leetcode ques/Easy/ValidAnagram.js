@@ -50,4 +50,20 @@ var isAnagram = function (s, t) {
         }
     }
     return true;
+
+    //===============or==========
+    // let obj = {}
+    // for (let letter of string1) {
+    //     obj[letter] = (obj[letter] || 0) + 1 // anagram
+    // }
+    // for (let item of string2) {//bagaram
+    //     if (!obj[item]) {
+    //         return `${string2} is not a anagram of ${string1}`
+    //     }
+    //     obj[item] -= 1
+    // }
+    // console.log(`${string2} is a anagram of ${string1}`)
 };
+
+let a = isAnagram("anagram","bagaram");
+console.log(a);
