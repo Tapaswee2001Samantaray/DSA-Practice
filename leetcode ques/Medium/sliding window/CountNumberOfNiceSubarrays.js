@@ -28,37 +28,47 @@ Constraints:
 1 <= k <= nums.length
 */
 
-var numberOfSubarrays = function(nums, k) {
-    let prefix=0;
-    let noOfOdd=0;
-    let result=0;
-    let left=0;
+var numberOfSubarrays = function (nums, k) {
+    let prefix = 0;
+    let noOfOdd = 0;
+    let result = 0;
+    let left = 0;
 
-    for(let right=0;right<nums.length;right++){
+    for (let right = 0; right < nums.length; right++) {
 
-        if(nums[right] & 1){
+        // if(nums[right]%2!=0){
+        //     countOfOdd++;
+        // }
+        //=======or======
+        if (nums[right] & 1) {
             noOfOdd++
         }
 
-        while(noOfOdd>k && left<right){
-            if(nums[left] & 1){
+        while (noOfOdd > k && left < right) {
+            // if(nums[left]%2!=0){
+            //     countOfOdd--;
+            // }
+            //====or=====
+            if (nums[left] & 1) {
                 noOfOdd--;
             }
             left++;
-            prefix=0;
+            prefix = 0;
         }
 
-        while(!(nums[left] & 1) && left<right){
+        // while(nums[left]%2==0 && left<right){
+        //=====or=====
+        while (!(nums[left] & 1) && left < right) {
             left++;
             prefix++;
         }
 
-        if(noOfOdd==3){
-            result += prefix+1;
+        if (noOfOdd == 3) {
+            result += prefix + 1;
         }
     }
     return result;
 }
 
-let a = numberOfSubarrays([1,1,2,1,1] , 3);
+let a = numberOfSubarrays([1, 1, 2, 1, 1], 3);
 console.log(a);
