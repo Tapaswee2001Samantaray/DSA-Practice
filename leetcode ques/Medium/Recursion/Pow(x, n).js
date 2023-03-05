@@ -26,30 +26,30 @@ n is an integer.
 -104 <= xn <= 104
 */
 
-var myPow = function(x, n) {
-    if(n==0){
+var myPow = function (x, n) {
+    if (n == 0) {
         return 1;
     }
 
-    if(n>0){
-        return recursive(x,n);
+    if (n > 0) {
+        return recursive(x, n);
     } else {
-        return 1/recursive(x,-n);
+        return 1 / recursive(x, -n);
     }
 }
 
-let recursive = function(x,n){
-    if(n==1){
+let recursive = function (x, n) {
+    if (n == 1) {
         return x;
     }
 
-    let temp=recursive(x,Math.floor(n/2));
-    if(!(n&1)){
-        return temp*temp;
-    } else{
-        return x*temp*temp;
+    let temp = recursive(x, Math.floor(n / 2));
+    if (!(n & 1)) {
+        return temp * temp;
+    } else {
+        return x * temp * temp;
     }
 };
 
-let a = myPow(2.00000,10);
+let a = myPow(2.00000, 10);
 console.log(a);
