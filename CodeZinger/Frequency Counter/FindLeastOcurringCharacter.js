@@ -43,7 +43,7 @@ function solution(str) {
     }
 
     let result = sortedString[0];
-    for (let key of map) {
+    for (let key of map) {//[[e,2],[h,1],[l,1],[o,1]]
         if (key[1] < map.get(result)) {
             result = key[0];
         }
@@ -52,5 +52,5 @@ function solution(str) {
     return result;
 }
 
-let a = solution("hello");
+let a = solution("eehlo"); 
 console.log(a);
