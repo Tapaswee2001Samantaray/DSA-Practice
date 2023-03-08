@@ -41,9 +41,11 @@ var characterReplacement = function (s, k) {
         maxFreq = Math.max(maxFreq, map.get(char));
 
         //check invalid condition
-        while (maxFreq + k < right - left + 1) {
+        // while (maxFreq + k < right - left + 1) {
+        //=====or======
+        while ((right - left + 1) - maxFreq > k) { // A A A A B B B  K=2
             map.set(s[left], map.get(s[left]) - 1);
-            maxFreq = Math.max(maxFreq, map.get(s[left]));
+            maxFreq = Math.max(maxFreq, map.get(char));
             left++;
         }
         maxLength = Math.max(maxLength, right - left + 1);
