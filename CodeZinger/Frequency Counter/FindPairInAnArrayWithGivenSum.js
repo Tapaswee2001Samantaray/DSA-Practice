@@ -36,6 +36,7 @@ function solution(s, a, arr) {
     for (let i = 0; i < a; i++) {
         if (obj[s - arr[i]]) {
             return 1;
+            // return [obj[s - arr[i]], i];
         } else {
             obj[arr[i]] = 1;
         }
