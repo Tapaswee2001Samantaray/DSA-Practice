@@ -44,11 +44,12 @@ var minEatingSpeed = function (piles, h) {
     let maxPileSize = 0;
     let minSpeed = 0;
 
-    for (let i = 0; i < piles.length; i++) {
+    for (let i = 0; i < piles.length; i++) { //O(n) maxPileSize
         maxPileSize += piles[i];
     }
 
-    let low = 1;
+    //speed range. [1......maxPileSize]  banana/hour
+    let low = 1;//not denoting index
     let high = maxPileSize;
 
     while (low <= high) {
