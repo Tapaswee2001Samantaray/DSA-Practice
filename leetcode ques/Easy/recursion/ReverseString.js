@@ -22,8 +22,9 @@ s[i] is a printable ascii character.
 */
 
 var reverseString = function (s) {
+    // s=s.split("");
     recursive(s, 0, s.length - 1);
-    return s;
+    return s//.join("");
 }
 
 let recursive = function (s, left, right) {
@@ -39,4 +40,5 @@ let recursive = function (s, left, right) {
 }
 
 let a = reverseString(["h", "e", "l", "l", "o"]);
+// let a = reverseString("HELLO");
 console.log(a);
