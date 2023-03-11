@@ -63,7 +63,8 @@ var minimumTime = function (time, totalTrips) {
             low = mid + 1;
         }
     }
-
+     //TC:  O(n + nlogm) ~ O(nlogm)
+    //SC: O(1)
     return minTimeTaken;
 }
 
