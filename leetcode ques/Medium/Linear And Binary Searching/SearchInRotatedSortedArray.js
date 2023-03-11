@@ -40,6 +40,8 @@ var search = function (nums, target) {
     let low = 0;
     let high = nums.length - 1;
 
+    //which part of given window is sorted
+   //does our target exist in that window
     while (low <= high) {
         let mid = low + Math.floor((high - low) / 2);
 
@@ -47,7 +49,7 @@ var search = function (nums, target) {
 
             return mid;
 
-        } else if (nums[low] <= nums[mid]) {
+        } else if (nums[low] <= nums[mid]) {//is left part is sorted
 
             if (target >= nums[low] && target <= nums[mid]) {
                 high = mid - 1;
@@ -55,7 +57,7 @@ var search = function (nums, target) {
                 low = mid + 1;
             }
 
-        } else {
+        } else {//is right part is sorted
 
             if (target >= nums[mid] && target <= nums[high]) {
                 low = mid + 1;
@@ -65,7 +67,9 @@ var search = function (nums, target) {
 
         }
     }
-    return -1;
+   //TC: O(logn)
+   //SC: O(1)
+   return -1;//if you have to come out of binary search loop , which means answer does not exist
 }
 
 // let a = search([4, 5, 6, 7, 0, 1, 2], 0);
