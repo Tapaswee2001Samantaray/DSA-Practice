@@ -37,6 +37,7 @@ var searchMatrix = function (matrix, target) {
     let a = matrix.length; //no. of rows
     let b = matrix[0].length; //no. of columns
 
+    //start from top right corner of matrix
     let row = 0;
     let column = b - 1;
 
