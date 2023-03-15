@@ -22,8 +22,30 @@ function mergeArr(arr1, arr2) {
         result.push(arr2[j]);
         j++;
     }
-    return result;
+    //=========or=======
+    while (result.length < (n + m)) {
+        if (i == n) {
+            result.push(arr2[j])
+            j++
+        }
+        else if (j == m) {
+            result.push(arr1[i])
+            i++
+        }
+        else {
+            if (arr1[i] < arr2[j]) {
+                result.push(arr1[i])
+                i++
+            }
+            else {
+                result.push(arr2[j])
+                j++
+            }
+        }
+        return result;
+    }
 }
+
 
 let arr1 = [1, 6, 9];
 let arr2 = [2, 4, 8, 10, 15];
