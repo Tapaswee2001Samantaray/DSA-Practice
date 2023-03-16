@@ -25,25 +25,51 @@ Constraints:
 */
 
 var mySqrt = function (x) {
-    let low = 0;
-    let high = x;
+    // let low = 0;
+    // let high = x;
 
+    // let result = 0;
+    // while (low <= high) {
+    //     let mid = low + Math.floor((high - low) / 2);
+
+    //     if ((mid * mid) > x) {
+    //         high = mid - 1;
+    //     } else {
+    //         if (low == mid) {
+    //             result = low;
+    //             low++;
+    //         } else {
+    //             low = mid;
+    //         }
+    //     }
+    // }
+    // return result;
+
+    //==========or===========
+    if (x == 0 || x == 1) {
+        return x;
+    }
+
+    let low = 0;
+    let high = x / 2;
     let result = 0;
+
     while (low <= high) {
         let mid = low + Math.floor((high - low) / 2);
 
-        if ((mid * mid) > x) {
+        let midSquare = mid * mid;
+
+        if (midSquare > x) {
             high = mid - 1;
+        } else if (midSquare < x) {
+            result = mid;
+            low = mid + 1;
         } else {
-            if (low == mid) {
-                result = low;
-                low++;
-            } else {
-                low = mid;
-            }
+            result = mid;
+            break;
         }
     }
-    return result;
+    return result
 };
 
 let a = mySqrt(4);
