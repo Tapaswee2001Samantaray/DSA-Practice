@@ -50,5 +50,7 @@ var relativeSortArray = function (arr1, arr2) {
     return arr1;
 }
 
-let a = relativeSortArray([2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19], [2, 1, 4, 3, 9, 6]);
+let array1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19];
+let array2 = [2, 1, 4, 3, 9, 6];
+let a = relativeSortArray(array1, array2);
 console.log(a);
