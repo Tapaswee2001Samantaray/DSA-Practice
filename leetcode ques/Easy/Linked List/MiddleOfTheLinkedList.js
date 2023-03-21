@@ -57,6 +57,9 @@ var middleNode = function (head) {
         slow = slow.next;
         fast = fast.next.next;
     }
+    //TC: O(n)
+    //Sc: O(1)
+
     return slow;
 }
 
