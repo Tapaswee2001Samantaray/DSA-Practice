@@ -66,33 +66,49 @@ let list2 = convertArr2ToLL([1, 3, 4]);
 
 //=========sol=======
 var mergeTwoLists = function (list1, list2) {
-    let dummyNode = new ListNode();
-    let pointer = dummyNode;
+    // let dummyNode = new ListNode();
+    // let pointer = dummyNode;
 
-    while (list1 != null && list2 != null) {
-        if (list1.value < list2.value) {
-            pointer.next = list1;
-            list1 = list1.next;
-        } else {
-            pointer.next = list2;
-            list2 = list2.next;
-        }
-        pointer = pointer.next;
+    // while (list1 != null && list2 != null) {
+    //     if (list1.value < list2.value) {
+    //         pointer.next = list1;
+    //         list1 = list1.next;
+    //     } else {
+    //         pointer.next = list2;
+    //         list2 = list2.next;
+    //     }
+    //     pointer = pointer.next;
+    // }
+
+    // while (list1 != null) {
+    //     pointer.next = list1;
+    //     list1 = list1.next;
+    //     pointer = pointer.next;
+    // }
+
+    // while (list2 != null) {
+    //     pointer.next = list2;
+    //     list2 = list2.next;
+    //     pointer = pointer.next;
+    // }
+
+    // return dummyNode.next;
+
+    if (list1 == null) {
+        return list2;
     }
 
-    while (list1 != null) {
-        pointer.next = list1;
-        list1 = list1.next;
-        pointer = pointer.next;
+    if (list2 == null) {
+        return list1;
     }
 
-    while (list2 != null) {
-        pointer.next = list2;
-        list2 = list2.next;
-        pointer = pointer.next;
+    if (list1.value > list2.value) {
+        list2.next = mergeTwoLists(list1, list2.next);
+        return list2;
+    } else {
+        list1.next = mergeTwoLists(list1.next, list2);
+        return list1;
     }
-
-    return dummyNode.next;
 }
 
 let a = mergeTwoLists(list1, list2);
