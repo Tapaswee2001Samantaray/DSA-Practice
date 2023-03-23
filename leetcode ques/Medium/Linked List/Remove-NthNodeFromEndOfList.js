@@ -53,21 +53,44 @@ let head = convertArrToLL([1, 2, 3, 4, 5]);
 
 //========ques sol=====
 var removeNthFromEnd = function (head, n) {
-    let dummyNode = new ListNode(0, head);
-    let low = dummyNode;
-    let high = head;
+    // let dummyNode = new ListNode(0, head);
+    // let low = dummyNode;
+    // let high = head;
 
-    while (n > 0 && high != null) {
-        high = high.next;
-        n--;
+    // while (n > 0 && high != null) {
+    //     high = high.next;
+    //     n--;
+    // }
+
+    // while (high != null) {
+    //     high = high.next;
+    //     low = low.next;
+    // }
+
+    // low.next = low.next.next;
+
+    // return dummyNode.next;
+
+    //=====or========
+    if (head == null) {
+        return null;
     }
 
-    while (high != null) {
-        high = high.next;
-        low = low.next;
+    let dummyNode = new ListNode(0);
+    dummyNode.next = head;
+
+    let slow = dummyNode;
+    let fast = dummyNode;
+
+    for (let i = 1; i <= n + 1; i++) {
+        fast = fast.next;
     }
 
-    low.next = low.next.next;
+    while (fast != null) {
+        fast = fast.next;
+        slow = slow.next;
+    }
+    slow.next = slow.next.next;
 
     return dummyNode.next;
 }
