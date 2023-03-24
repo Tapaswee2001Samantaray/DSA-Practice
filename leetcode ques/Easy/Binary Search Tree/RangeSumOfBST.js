@@ -26,19 +26,19 @@ The number of nodes in the tree is in the range [1, 2 * 104].
 All Node.val are unique.
 */
 
-var rangeSumBST = function(root, low, high) {
-    let answer=0;
+var rangeSumBST = function (root, low, high) {
+    let answer = 0;
 
-    if(root==null){
+    if (root == null) {
         return answer;
     }
 
-    if(root.value>=low&&root.value<=high){
-        answer+=root.value;
+    if (root.value >= low && root.value <= high) {
+        answer += root.value;
     }
 
-    answer+=rangeSumBST(root.left,low,high);
-    answer+=rangeSumBST(root.right,low,high);
+    answer += rangeSumBST(root.left, low, high);
+    answer += rangeSumBST(root.right, low, high);
 
     return answer;
 }
