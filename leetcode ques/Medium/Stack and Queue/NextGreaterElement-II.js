@@ -38,6 +38,8 @@ var nextGreaterElements = function (nums) {
             stack.push(i);
         }
     }
+    //TC: O(2n-1) ~ O(n)
+   //SC: O(n)+O(n) = O(n)
     return resultArr;
 }
 
