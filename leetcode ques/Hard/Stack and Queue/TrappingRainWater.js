@@ -45,6 +45,8 @@ var trap = function (height) {
         }
         stack.push(i);
     }
+    //TC: O(n)
+    //SC: O(n)
     return totalUnitOfWater;
 }
 
