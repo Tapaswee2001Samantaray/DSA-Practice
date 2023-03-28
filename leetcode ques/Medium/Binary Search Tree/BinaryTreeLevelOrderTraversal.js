@@ -52,5 +52,7 @@ var levelOrder = function (root) {
         }
         answer.push(levelNodeList);
     }
+    // //TC:O(n)
+   // //SC:o(k) where k is max no of nodes at any level
     return answer;
 }
