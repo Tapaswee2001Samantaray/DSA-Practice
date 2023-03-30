@@ -35,22 +35,35 @@ The number of nodes in the tree is in the range [0, 5000].
 -1000 <= targetSum <= 1000
 */
 
-var hasPathSum = function (root, targetSum, sum = 0) {
-    if (root == null && targetSum == 1) {
+// var hasPathSum = function (root, targetSum, sum = 0) {
+// if (root == null && targetSum == 1) {
+//     return false;
+// }
+
+// sum += root.val;
+
+// if (root.left == null && root.right == null) {
+//     return targetSum == sum;
+// }
+
+// if (root.left != null && root.right != null) {
+//     return hasPathSum(root.left, targetSum, sum) || hasPathSum(root.right, targetSum, sum);
+// } else if (root.left != null) {
+//     return hasPathSum(root.left, targetSum, sum);
+// } else if (root.right != null) {
+//     return hasPathSum(root.right, targetSum, sum);
+// }
+// }
+
+//===========or===========
+var hasPathSum = function (root, targetSum) {
+    if (root == null) {
         return false;
     }
 
-    sum += root.val;
-
     if (root.left == null && root.right == null) {
-        return targetSum == sum;
+        return targetSum == root.value;
     }
 
-    if (root.left != null && root.right != null) {
-        return hasPathSum(root.left, targetSum, sum) || hasPathSum(root.right, targetSum, sum);
-    } else if (root.left != null) {
-        return hasPathSum(root.left, targetSum, sum);
-    } else if (root.right != null) {
-        return hasPathSum(root.right, targetSum, sum);
-    }
+    return hasPathSum(root.left, targetSum - root.value) || hasPathSum(root.right, targetSum - root.value);
 }
