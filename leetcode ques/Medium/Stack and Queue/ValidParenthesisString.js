@@ -37,7 +37,7 @@ var checkValidString = function (s) {
         if (s[i] == "(") {
             stack.push(i);
         } else if (s[i] == "*") {
-            stack.push(i);
+            starStack.push(i);
         } else {
             if (stack.length != 0) {
                 stack.pop();
@@ -65,6 +65,7 @@ var checkValidString = function (s) {
     return true;
 }
 
-let a = checkValidString("(*))");
+// let a = checkValidString("(*))");
+let a = checkValidString("((((()(()()()*()(((((*)()*(**(())))))(())()())(((())())())))))))(((((())*)))()))(()((*()*(*)))(*)()");
 
 console.log(a);
