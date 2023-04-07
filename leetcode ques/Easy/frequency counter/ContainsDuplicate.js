@@ -26,13 +26,22 @@ Constraints:
 var containsDuplicate = function (nums) {
     let map = new Map();
 
+    // for (let i = 0; i < nums.length; i++) {
+    //     map.set(nums[i], (map.get(nums[i]) || 0) + 1);
+    // }
+    // for (let key of map) {
+    //     if (key[1] > 1) {
+    //         return true;
+    //     }
+    // }
+    // return false;
+
+    //=======or=====
     for (let i = 0; i < nums.length; i++) {
-        map.set(nums[i], (map.get(nums[i]) || 0) + 1);
-    }
-    for (let key of map) {
-        if (key[1] > 1) {
-            return true;
+        if (map.has(nums[i])) {
+            return true
         }
+        map.set(nums[i], 1);
     }
     return false;
 }
