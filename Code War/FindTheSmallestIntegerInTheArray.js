@@ -11,13 +11,13 @@ You can assume, for the purpose of this kata, that the supplied array will not b
 function findSmallestInt(args) {
     let smallestInt = args[0];
 
-    for(let i=1;i<args.length;i++){
-        if(args[i]<smallestInt){
-            smallestInt=args[i];
+    for (let i = 1; i < args.length; i++) {
+        if (args[i] < smallestInt) {
+            smallestInt = args[i];
         }
     }
     return smallestInt
 }
 
-let a=findSmallestInt([34, 15, 88, 2]);
+let a = findSmallestInt([34, 15, 88, 2]);
 console.log(a);
