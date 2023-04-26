@@ -38,7 +38,7 @@ var numIslands = function (grid) {
     let count = 0;
 
     for (let i = 0; i < grid.length; i++) {
-        for (let j = 0; j < grid[i].length; i++) {
+        for (let j = 0; j < grid[i].length; j++) {
             if (grid[i][j] == "1") {
                 numIslandsUtil(grid, i, j);
                 count++
