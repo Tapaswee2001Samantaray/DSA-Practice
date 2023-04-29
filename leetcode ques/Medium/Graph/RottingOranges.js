@@ -80,6 +80,8 @@ var orangesRotting = function (grid) {
         }
     }
 
+    //TC: O(m*n*4)
+    //SC: O(m*n)
     return count == 0 ? 0 : count - 1;
 }
 
