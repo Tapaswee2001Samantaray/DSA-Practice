@@ -31,7 +31,7 @@ Constraints:
 */
 
 
-var fib = function (n) {
+/* var fib = function (n) {
     let f = [0, 1, 1];
 
     for (let i = 3; i <= n; i++) {
@@ -40,7 +40,20 @@ var fib = function (n) {
     }
 
     return f[n];
+} */
+
+// ======== or ======
+var fib = function (n) {
+    let dp = new Array(n + 1).fill(0);
+
+    if (n <= 1) {
+        return n;
+    } else if (dp[n] != 0) {
+        return dp[n];
+    } else {
+        return dp[n] = fib(n - 1) + fib(n - 2);
+    }
 }
 
-let a = fib(10);
+let a = fib(4);
 console.log(a);
