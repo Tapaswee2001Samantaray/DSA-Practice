@@ -28,7 +28,7 @@ Constraints:
 0 <= nums[i] <= 400
 */
 
-var rob = function (nums) {
+/* var rob = function (nums) {
     let dp = new Array(nums.length).fill(-1);
 
     function robRec(nums, i) {
@@ -48,6 +48,26 @@ var rob = function (nums) {
 
     return robRec(nums, 0);
 }
+ */
 
-let a = rob([1, 2, 3, 1]);
+//=========or=======
+var rob = function (nums) {
+    let n = nums.length;
+    let dp = new Array(n + 1).fill(0);
+
+    dp[1] = nums[0];
+
+    for (let i = 2; i <= n; i++) {
+        dp[i] = Math.max(nums[i - 1] + dp[i - 2], dp[i - 1]);
+        //two options , one either rob the current house and include all prev loot till i-2 house as can't rob i-1 in that case,
+        //or
+        //don't rob the current house and include all prev loot till robbing of house i-1
+    }
+    //TC : O(n)
+    //SC: O(n)
+    return dp[n];
+}
+
+// let a = rob([1, 2, 3, 1]);
+let a = rob([2, 7, 9, 3, 1]);
 console.log(a);
