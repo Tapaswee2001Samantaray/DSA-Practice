@@ -69,7 +69,8 @@ var countSubIslands = function (grid1, grid2) {
         dfsCountSubIslands(row - 1, col); // up
         dfsCountSubIslands(row, col - 1); // left
     }
-
+    //TC :- O(mn)
+    //SC :- O(1)
     return numOfIslands;
 }
 
