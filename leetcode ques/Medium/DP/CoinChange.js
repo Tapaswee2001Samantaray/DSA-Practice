@@ -32,7 +32,7 @@ Constraints:
 */
 
 var coinChange = function (coins, amount) {
-    let dp = new Array(amount + 1);
+    let dp = new Array(amount + 1);//this is the DP array where we are storing the fewest number of coins that we need to make up that each amount(from 1 to amount)
     dp[0] = 0;
 
     for (let i = 1; i < dp.length; i++) {
