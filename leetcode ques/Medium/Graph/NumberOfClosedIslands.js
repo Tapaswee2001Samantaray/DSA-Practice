@@ -56,6 +56,8 @@ var closedIsland = function (grid) {
             }
         }
     }
+    //TC :- O(m*n)
+    //SC :- O(m*n)
     return count;
 }
 

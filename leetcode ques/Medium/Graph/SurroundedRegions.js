@@ -61,6 +61,8 @@ var solve = function (board) {
             }
         }
     }
+    //TC :- O(m*n)
+    //SC :- O(m*n)
     return board;
 }
 

@@ -48,6 +48,8 @@ var numEnclaves = function (grid) {
             }
         }
     }
+    //TC :- O(m*n)
+    //SC :- O(m*n)
     return result;
 }
 
