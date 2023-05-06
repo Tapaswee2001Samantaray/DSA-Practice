@@ -52,6 +52,8 @@ var maxAreaOfIsland = function (grid) {
             maxArea = Math.max(maxArea, area);
         }
     }
+    // TC:- O(m * n)
+    // SC:- O(m * n)
     return maxArea;
 }
 

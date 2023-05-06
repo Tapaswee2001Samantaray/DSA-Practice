@@ -38,6 +38,7 @@ All the values of rooms[i] are unique.
 */
 
 var canVisitAllRooms = function (rooms) {
+    //DFS in iterative way
     let stack = [];
     let n = rooms.length;
 
@@ -63,6 +64,8 @@ var canVisitAllRooms = function (rooms) {
             return false;
         }
     }
+    //TC:-O(N+E) bcz N is the number of rooms and E is the total number of keys in all rooms
+    //SC:-O(2n)~O(n)
     return true;
 }
 

@@ -54,7 +54,8 @@ var eventualSafeNodes = function (graph) {
             safeNodes.push(i);
         }
     }
-
+    //TC :-  O(N + E) bcz N is the number of nodes and E is the number of edges
+    //SC :-  O(n)
     return safeNodes;
 }
 
