@@ -29,6 +29,8 @@ nums is sorted in a strictly increasing order.
 
 var sortedArrayToBST = function (nums) {
     return sortedArrayToBSTUtil(nums, 0, nums.length - 1);
+    //TC :- O(n)
+    //SC :- O(n)
 }
 
 let sortedArrayToBSTUtil = function (nums, left, right) {
