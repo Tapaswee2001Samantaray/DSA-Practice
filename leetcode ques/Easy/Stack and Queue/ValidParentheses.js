@@ -52,6 +52,8 @@ var isValid = function (s) {
     // }
     //====or==
     return stack.length == 0;
+    //TC :- O(n)
+    //SC :- O(n)
 }
 
 // let a=isValid("[()[]{}");

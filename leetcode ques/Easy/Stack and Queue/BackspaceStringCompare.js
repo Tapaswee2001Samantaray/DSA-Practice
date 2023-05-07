@@ -66,6 +66,8 @@ var backspaceCompare = function (s, t) {//"ab##", t = "c#d#"
     } else {
         return false;
     }
+    //TC :- O(m + n)
+    //SC :- O(m + n)
 }
 
 let a = backspaceCompare("ab##", "c#d#");
