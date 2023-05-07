@@ -33,7 +33,7 @@ p != q
 p and q will exist in the BST.
 */
 
-var lowestCommonAncestor = function (root, p, q) {
+/* var lowestCommonAncestor = function (root, p, q) {
     let curr = root;
 
     while (curr) {
@@ -45,4 +45,17 @@ var lowestCommonAncestor = function (root, p, q) {
             return curr;
         }
     }
-}
+} */
+
+//=============or===========
+var lowestCommonAncestor = function(root, p, q) {
+    if(p.val > root.val && q.val > root.val){
+        return lowestCommonAncestor(root.right, p, q);
+    } else if (p.val < root.val && q.val < root.val){
+        return lowestCommonAncestor(root.left, p, q);
+    }
+
+    return root;
+    // TC :- O(h) bcz of height of the tree
+    // SC :- O(h) bcz of height of the tree
+};
