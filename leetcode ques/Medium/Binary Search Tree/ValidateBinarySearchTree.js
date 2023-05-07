@@ -29,7 +29,7 @@ The number of nodes in the tree is in the range [1, 104].
 -231 <= Node.val <= 231 - 1
 */
 
-var isValidBST = function (root, min, max) {
+/* var isValidBST = function (root, min, max) {
     if (root == null) {
         return true;
     }
@@ -49,4 +49,21 @@ var isValidBST = function (root, min, max) {
     }
 
     return isValidBST(root.left, min, root.value - 1) && isValidBST(root.right, root.value + 1, max);
+} */
+
+//==========or==========
+var isValidBST = function (root) {
+    return isValidBstUtil(root, Number.MIN_VALUE, Number.MAX_VALUE);
+};
+
+let isValidBstUtil = function (root, min, max) {
+    if (root == null) {
+        return true;
+    }
+
+    if (root.val <= min || root.val >= max) {
+        return false;
+    }
+
+    return isValidBstUtil(root.left, min, root.val) && isValidBstUtil(root.right, root.val, max);
 }
