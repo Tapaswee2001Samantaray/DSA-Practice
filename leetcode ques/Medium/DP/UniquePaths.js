@@ -55,6 +55,8 @@ var uniquePaths = function (m, n) {
             }
         }
     }
+    //TC : O(mn)
+    //SC : O(mn)
     return dp[m - 1][n - 1];
 }
 

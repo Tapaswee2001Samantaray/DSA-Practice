@@ -37,6 +37,8 @@ var rob = function (root) {
     let result = robDsf(root);
 
     return Math.max(result[0], result[1]);
+    //TC : O(n)
+ //SC: O(n)
 };
 
 let robDsf = function (root) {

@@ -44,6 +44,8 @@ var minPathSum = function (grid) {
             grid[i][j] += x;
         }
     }
+    //TC : O(mn)
+    //SC : O(1)
     return grid[m - 1][n - 1];
 }
 

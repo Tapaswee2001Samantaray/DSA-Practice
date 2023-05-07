@@ -50,6 +50,8 @@ var coinChange = function (coins, amount) {
             }
         }
     }
+    // TC:- O(amount * n)
+    // SC:- O(amount)
     return dp[amount] == Number.MAX_VALUE ? -1 : dp[amount];
 }
 
