@@ -63,6 +63,8 @@ var decodeString = function (s) {
             }
         }
     }
+    //TC :- O(n * k)
+    //SC :- O(n)
     return stack.join("");
 };
 

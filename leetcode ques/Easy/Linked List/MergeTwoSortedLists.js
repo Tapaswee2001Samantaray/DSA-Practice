@@ -92,6 +92,8 @@ var mergeTwoLists = function (list1, list2) {
     //     pointer = pointer.next;
     // }
 
+    //TC :- O(n+m)
+    //SC :- O(1)
     // return dummyNode.next;
 
     if (list1 == null) {
