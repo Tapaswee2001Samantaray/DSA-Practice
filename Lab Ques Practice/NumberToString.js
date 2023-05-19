@@ -19,5 +19,5 @@ function numToStr(nums) {
     return result;
 }
 
-let a = numToArr([2, 5]);
+let a = numToStr([2, 5]);
 console.log(a);
