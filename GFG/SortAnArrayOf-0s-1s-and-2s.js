@@ -37,7 +37,7 @@ Constraints:
 0 <= A[i] <= 2
 */
 
-function sort012(arr) {
+/* function sort012(arr) {
     let ZC = 0;
     let OC = 0;
     let TC = 0;
@@ -69,6 +69,37 @@ function sort012(arr) {
         j++;
     }
 
+    return arr;
+} */
+
+//=================or===========
+function sort012(arr) {
+    let ZC = 0;
+    let OC = 0;
+    let TC = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == 0) {
+            ZC++;
+        } else if (arr[i] == 1) {
+            OC++;
+        } else {
+            TC++;
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (ZC) {
+            arr[i] = 0;
+            ZC--;
+        } else if (OC) {
+            arr[i] = 1;
+            OC--;
+        } else if (TC) {
+            arr[i] = 2;
+            TC--;
+        }
+    }
     return arr;
 }
 
