@@ -70,17 +70,19 @@ function solution(str1, str2) {
         map.set(str2[i], (map.get(str2[i]) || 0) + 1);
     }
 
-    console.log(map);
+    let foundMatch = false;
+
     map.forEach((value, key) => {
         if (maximumFrequency == value && frequentElement == key) {
-            console.log(map);
-            console.log(maximumFrequency,frequentElement);
-            console.log(value,key);
-            
-            return "Yes";
+            foundMatch = true;
         }
     });
-    return "No";
+
+    if(foundMatch){
+        return "Yes";
+    } else {
+        return "No";
+    }
 }
 
 let a = solution("hezzllo world", "albcllzzsyaaaaaaaa");
